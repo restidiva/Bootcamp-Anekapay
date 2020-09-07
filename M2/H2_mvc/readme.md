@@ -1,0 +1,3 @@
+Model: untuk mengatur data (dari database) sesuai dengan instruksi dari controller.
+View: untuk menyajikan informasi kepada user sesuai dengan instruksi dari controller.
+Controller: untuk mengatur apa yang harus dilakukan model, dan view mana yang harus ditampilkan berdasarkan permintaan dari user. Namun, terkadang permintaan dari user tidak selalu memerlukan aksi dari model. Misalnya seperti menampilkan halaman form untuk registrasi user.
