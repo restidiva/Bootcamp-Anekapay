@@ -1,0 +1,36 @@
+extends ./layout.jade
+
+block title
+  title Data Buku
+block content
+  div.container
+    div.row
+      div.col-xs-6.col-md-1
+      div.col-xs-6.col-md-10
+        p
+          a.class(href='/tambah/buku')
+            button(type="button").btn.btn-primary Tambah
+        p
+        table.table.table-bordered.table-striped.table-hover
+          thead
+            tr
+              th.text-center Judul Buku
+              th.text-center Pengarang
+              th.text-center Penerbit
+              th.text-center Tahun Terbit
+              th.text-center Jumlah Halaman
+              th.text-center Aksi
+          tbody
+            each buku in bukus
+              tr
+                td #{buku.judul}
+                td #{buku.pengarang}
+                td #{buku.penerbit}
+                td #{buku.tahunTerbit}
+                td #{buku.halaman}
+                td.text-center
+                  a.class(href='/edit/buku/#{buku.idBuku}')
+                    button(type="button").btn.btn-success Edit
+                  a.class(href='/delete/buku/#{buku.idBuku}', onclick='return confirm("Apakah anda ingin menghapus data ?")')
+                    button(type="button").btn.btn-danger Delete
+      div.col-xs-6.col-md-4
