@@ -1,0 +1,17 @@
+extends ./layout.jade
+
+block title
+  title Data Buku
+block content
+  div.container
+    div.row
+      div.col-xs-6.col-md-1
+      div.col-xs-6.col-md-10
+        h3 
+          |Welcome, #{message}
+        a.class(href='/tampil') Data User
+        a.class(href='/') Data Buku 
+        p
+            a.class(href='/logout')
+              button(type="button").btn.btn-primary Logout
+      div.col-xs-6.col-md-4

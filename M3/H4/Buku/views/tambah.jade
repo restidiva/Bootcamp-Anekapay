@@ -1,0 +1,28 @@
+extends ./layout.jade
+
+block title
+  title Tambah Data Buku
+block content
+  div.container
+    div.row
+      div.col-xs-6.col-md-4
+      div.col-xs-6.col-md-4
+        form(id="form", method="post", action="/save/buku")
+          .form-group
+            label Judul Buku :
+            input(type="text", placeholder="Judul Buku", name="judul").form-control
+          .form-group
+            label Pengarang :
+            input(type="text", placeholder="Pengarang", name="pengarang").form-control
+          .form-group
+            label Penerbit :
+            input(type="text", placeholder="Penerbit", name="penerbit").form-control
+          .form-group
+            label Tahun Terbit :
+            input(type="number", placeholder="Tahun Terbit", name="tahunTerbit").form-control
+          .form-group
+            label Jumlah Halaman :
+            input(type="number", placeholder="Jumlah Halaman", name="halaman").form-control
+          input(type="hidden", name="_csrf" value="#{csrfToken}")
+          button(type="submit").btn.btn-primary Simpan
+      div.col-xs-6.col-md-4

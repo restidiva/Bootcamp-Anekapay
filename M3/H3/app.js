@@ -1,5 +1,8 @@
 (function() {
     'use strict';
+
+    // const session = require('express-session');
+    // const bodyParser = require('body-parser');
   
     var http = require('http'),
       express = require('express'), //express
@@ -38,7 +41,7 @@
     app.use(express.static(path.join(__dirname, 'bower_components')));
   
     app.use('/', BukuRoute);
-  
+
     mongoose.connect('mongodb://localhost/CRUD_Buku', function(err, res) {
       if (err) {
         // return logger.error('koneksi mongodb gagal', err);

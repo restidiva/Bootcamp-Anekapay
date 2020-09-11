@@ -1,0 +1,28 @@
+extends ./layout.jade
+
+block title
+  title Tambah Data User
+block content
+  div.container
+    div.row
+      div.col-xs-6.col-md-4
+      div.col-xs-6.col-md-4
+        form(id="form", method="post", action="/save/user")
+          .form-group
+            label Nama Lengkap :
+            input(type="text", placeholder="Nama Lengkap", name="nama").form-control
+          .form-group
+            label E-mail :
+            input(type="email", placeholder="E-mail", name="email").form-control
+          .form-group
+            label Username :
+            input(type="text", placeholder="Username", name="username").form-control
+          .form-group
+            label Password :
+            input(type="password", placeholder="Password", name="password").form-control
+          .form-group
+            label Status :
+            input(type="text", placeholder="Status", name="level").form-control
+          input(type="hidden", name="_csrf" value="#{csrfToken}")
+          button(type="submit").btn.btn-primary Daftar
+      div.col-xs-6.col-md-4
