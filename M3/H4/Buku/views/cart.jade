@@ -1,0 +1,41 @@
+extends ./layout.jade
+
+block title
+  title Keranjang Belanja
+block content
+  div.container
+    div.row
+      div.col-xs-6.col-md-1
+      div.col-xs-6.col-md-10
+        table.table.table-bordered.table-striped.table-hover
+          thead
+            tr
+              th.text-center Nama Buku
+              th.text-center Harga
+              th.text-center Jumlah
+              th.text-center Subtotal
+              //- th.text-center Stok
+              th.text-center Aksi
+          tbody
+            each cart in keranjang
+              tr
+                td #{cart.nama}
+                td #{cart.harga}
+                td #{cart.jumlah}
+                td #{cart.subtotal}
+                //- td #{cart.stok}
+                td.text-center
+                  //- a.class(href='/tambah/cart')
+                  //-   button(type="button").btn.btn-warning tambah keranjang 
+                  //-   br
+                  a.class(href='/cart/edit/cart/#{cart.idBuku}')
+                    button(type="button").btn.btn-success Edit
+                  a.class(href='/cart/hapusCart/#{cart.idBuku}', onclick='return confirm("Apakah anda ingin menghapus data ?")')
+                    button(type="button").btn.btn-danger Delete
+        h3
+                 |Total : #{Total}
+        p
+            a.class(href="/cart/checkout") Checkout
+        p
+            a.class(href="/user/dashUser") Back
+      div.col-xs-6.col-md-4

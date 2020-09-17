@@ -1,0 +1,26 @@
+extends ./layout.jade
+
+block title
+  title Keranjang Belanja
+block content
+  div.container
+    div.row
+      div.col-xs-6.col-md-1
+      div.col-xs-6.col-md-10
+        table.table.table-bordered.table-striped.table-hover
+          thead
+            tr
+              th.text-center Nama Buku
+              th.text-center Harga
+              th.text-center Jumlah
+              th.text-center Total
+          tbody
+            each detail in cart
+              tr
+                td #{detail.namaBuku}
+                td #{detail.harga}
+                td #{detail.jumlah}
+                td #{detail.subtotal}
+        p
+            a.class(href="/cart/riwayat") Back
+      div.col-xs-6.col-md-4

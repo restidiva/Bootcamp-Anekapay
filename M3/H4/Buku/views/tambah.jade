@@ -7,7 +7,7 @@ block content
     div.row
       div.col-xs-6.col-md-4
       div.col-xs-6.col-md-4
-        form(id="form", method="post", action="/save/buku")
+        form(id="form", method="post", action="/buku/save/buku")
           .form-group
             label Judul Buku :
             input(type="text", placeholder="Judul Buku", name="judul").form-control
@@ -23,6 +23,12 @@ block content
           .form-group
             label Jumlah Halaman :
             input(type="number", placeholder="Jumlah Halaman", name="halaman").form-control
+          .form-group
+            label Harga :
+            input(type="number", placeholder="Harga Buku", name="harga").form-control
+          .form-group
+            label Stok :
+            input(type="number", placeholder="Stok", name="stok").form-control
           input(type="hidden", name="_csrf" value="#{csrfToken}")
           button(type="submit").btn.btn-primary Simpan
       div.col-xs-6.col-md-4

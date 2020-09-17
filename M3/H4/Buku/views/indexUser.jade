@@ -9,6 +9,8 @@ block content
       div.col-xs-6.col-md-10
         h3 
           |Welcome, #{user}
+          a.class(href='/user/profil')
+              button(type="button").btn.btn-warning Profile
         table.table.table-bordered.table-striped.table-hover
           thead
             tr
@@ -18,6 +20,7 @@ block content
               th.text-center Tahun Terbit
               th.text-center Jumlah Halaman
               th.text-center Harga
+              th.text-center Stok
               th.text-center Aksi
           tbody
             each buku in bukus
@@ -28,10 +31,15 @@ block content
                 td #{buku.tahunTerbit}
                 td #{buku.halaman}
                 td #{buku.harga}
+                td #{buku.stok}
                 td.text-center
-                  a.class(href='/cart')
-                    button(type="button").btn.btn-warning Tambah ke Keranjang 
+                  a.class(href='/cart/tambahCart/#{buku.idBuku}')
+                    button(type="button").btn.btn-primary Tambah ke Keranjang 
         p
-            a.class(href='/logout')
-              button(type="button").btn.btn-primary Logout
+            a.class(href='/login/logout')
+              button(type="button").btn.btn-danger Logout
+            a.class(href='/cart/cart')
+              button(type="button").btn.btn-success Keranjang
+            a.class(href='/cart/riwayat')
+              button(type="button").btn.btn-warning History
       div.col-xs-6.col-md-4

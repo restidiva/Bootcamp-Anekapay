@@ -1,0 +1,22 @@
+extends ./layout.jade
+
+block title
+  title Edit Data Keranjang
+block content
+  div.container
+    div.row
+      div.col-xs-6.col-md-4
+      div.col-xs-6.col-md-4
+        form(id="form", method="post", action="/cart/edit/cart/#{data.idBuku}")
+          .form-group
+            label Nama Buku :
+            input(type="text", placeholder="Nama Buku", name="nama", value="#{data.nama}", readonly).form-control
+          .form-group
+            label Harga :
+            input(type="text", placeholder="Harga", name="harga", value="#{data.harga}", readonly).form-control
+          .form-group
+            label Jumlah :
+            input(type="number", placeholder="Jumlah", name="jumlah", value="#{data.jumlah}").form-control
+          input(type="hidden", name="_csrf" value="#{csrfToken}")
+          button(type="submit").btn.btn-primary Simpan
+      div.col-xs-6.col-md-4

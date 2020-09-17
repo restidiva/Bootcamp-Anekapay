@@ -13,7 +13,6 @@ block content
             button(type="button").btn.btn-primary Tambah
         p
         h3 
-          |Welcome, #{user}
         table.table.table-bordered.table-striped.table-hover
           thead
             tr
@@ -23,6 +22,7 @@ block content
               th.text-center Tahun Terbit
               th.text-center Jumlah Halaman
               th.text-center Harga
+              th.text-center Stok
               th.text-center Aksi
           tbody
             each buku in bukus
@@ -33,6 +33,7 @@ block content
                 td #{buku.tahunTerbit}
                 td #{buku.halaman}
                 td #{buku.harga}
+                td #{buku.stok}
                 td.text-center
                   a.class(href='/cart')
                     button(type="button").btn.btn-warning tambah keranjang 

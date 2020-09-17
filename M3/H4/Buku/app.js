@@ -17,9 +17,10 @@
     mongoose = require('mongoose'), //mongoose
     cookieParser = require('cookie-parser'),
     BukuRoute = require('./routes/BukuRoute'),
-    UserRoute = require('./routes/UserRoute'),
-    AdminRoute = require('./routes/AdminRoute'),
-    Login = require('./routes/login'),
+      UserRoute = require('./routes/UserRoute'),
+      AdminRoute = require('./routes/AdminRoute'),
+      CartRoute = require('./routes/CartRoute'),
+      Login = require('./routes/login'),
     app = express();
 
   app.set('port', process.env.PORT || 3000);
@@ -50,10 +51,11 @@
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(express.static(path.join(__dirname, 'bower_components')));
 
-  app.use('/', BukuRoute);
-  app.use('/', UserRoute);
-  app.use('/', Login);
-  app.use('/', AdminRoute);
+  app.use('/buku', BukuRoute);
+  app.use('/user', UserRoute);
+  app.use('/login', Login);
+  app.use('/admin', AdminRoute);
+  app.use('/cart', CartRoute);
 
   mongoose.connect('mongodb://localhost/bukudb', function(err, res) {
     if (err) {

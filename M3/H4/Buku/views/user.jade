@@ -9,7 +9,7 @@ block content
       div.col-xs-6.col-md-1
       div.col-xs-6.col-md-10
         p
-          a.class(href='/tambah/user')
+          a.class(href='/admin/tambah/user')
             button(type="button").btn.btn-primary Tambah
         p
         table.table.table-bordered.table-striped.table-hover
@@ -26,8 +26,10 @@ block content
                 td #{user.email}
                 td #{user.username}
                 td.text-center
-                  a.class(href='/edit/user/#{user.idUser}')
+                  a.class(href='/admin/edit/user/#{user.idUser}')
                     button(type="button").btn.btn-success Edit
-                  a.class(href='/delete/user/#{user.idUser}', onclick='return confirm("Apakah anda ingin menghapus data ?")')
+                  a.class(href='/admin/delete/user/#{user.idUser}', onclick='return confirm("Apakah anda ingin menghapus data ?")')
                     button(type="button").btn.btn-danger Delete
+        p
+            a.class(href="/admin/dashAdmin") Back
       div.col-xs-6.col-md-4

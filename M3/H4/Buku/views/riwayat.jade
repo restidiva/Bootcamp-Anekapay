@@ -1,0 +1,29 @@
+extends ./layout.jade
+
+block title
+  title Riwayat Belanja
+block content
+  div.container
+    div.row
+      div.col-xs-6.col-md-1
+      div.col-xs-6.col-md-10
+        table.table.table-bordered.table-striped.table-hover
+          thead
+            tr
+              th.text-center Tanggal
+              th.text-center Total
+              th.text-center Aksi
+          tbody
+            each riwayat in cart
+              tr
+                td #{riwayat.tanggal}
+                td #{riwayat.total}
+                td.text-center
+                  //- a.class(href='/tambah/cart')
+                  //-   button(type="button").btn.btn-warning tambah keranjang 
+                  //-   br
+                  a.class(href='/cart/detail/#{riwayat.idCart}')
+                    button(type="button").btn.btn-success Detail
+        p
+            a.class(href="/user/dashUser") Back
+      div.col-xs-6.col-md-4

@@ -1,0 +1,35 @@
+  
+extends ./layout.jade
+
+block title
+  title Tambah Keranjang
+block content
+  div.container
+    div.row
+      div.col-xs-6.col-md-4
+      div.col-xs-6.col-md-4
+        form(id="form", method="post", action="/cart/simpan/cart")
+          .form-group
+            label Id Buku :
+            input(type="text", placeholder="Id Buku", name="idBuku", value="#{buku.idBuku}", readonly).form-control
+          .form-group
+            label Judul Buku :
+            input(type="text", placeholder="Judul Buku", name="judul", value="#{buku.judul}", readonly).form-control
+          .form-group
+            label Pengarang :
+            input(type="text", placeholder="Pengarang", name="pengarang", value="#{buku.pengarang}", readonly).form-control
+          .form-group
+            label Penerbit :
+            input(type="text", placeholder="Penerbit", name="penerbit", value="#{buku.penerbit}", readonly).form-control
+          .form-group
+            label Harga :
+            input(type="number", placeholder="Harga Buku", name="harga", value="#{buku.harga}", readonly).form-control
+          .form-group
+            label Stok :
+            input(type="number", placeholder="Stok", name="stok", value="#{buku.stok}", readonly).form-control
+          .form-group
+            label Jumlah :
+            input(type="number", placeholder="Jumlah Buku", name="jumlah").form-control
+          input(type="hidden", name="_csrf" value="#{csrfToken}")
+          button(type="submit").btn.btn-success Tambahkan ke Keranjang
+      div.col-xs-6.col-md-4

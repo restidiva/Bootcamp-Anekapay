@@ -7,7 +7,7 @@ block content
     div.row
       div.col-xs-6.col-md-4
       div.col-xs-6.col-md-4
-        form(id="form", method="post", action="/login/check")
+        form(id="form", method="post", action="/login/login/check")
           .form-group
             label E-mail :
             input(type="email", placeholder="E-mail", name="email").form-control
@@ -15,7 +15,8 @@ block content
             label Password :
             input(type="password", placeholder="Password", name="password").form-control
           input(type="hidden", name="_csrf" value="#{csrfToken}")
-          button(type="submit").btn.btn-primary Login
+          .form-group
+            button(type="submit").btn.btn-primary Login
         a.class(href='/tambah/user')
             button(type="button").btn.btn-primary Register
       div.col-xs-6.col-md-4

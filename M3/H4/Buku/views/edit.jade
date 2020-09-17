@@ -7,7 +7,7 @@ block content
     div.row
       div.col-xs-6.col-md-4
       div.col-xs-6.col-md-4
-        form(id="form", method="post", action="/update/buku/#{buku.idBuku}")
+        form(id="form", method="post", action="/buku/update/buku/#{buku.idBuku}")
           .form-group
             label Id Buku :
             input(type="text", placeholder="Id Buku", name="idBuku", value="#{buku.idBuku}", disabled).form-control
@@ -29,6 +29,9 @@ block content
           .form-group
             label Harga :
             input(type="number", placeholder="Harga Buku", name="harga", value="#{buku.harga}").form-control
+          .form-group
+            label Stok :
+            input(type="number", placeholder="Stok", name="stok", value="#{buku.stok}").form-control
           input(type="hidden", name="_csrf" value="#{csrfToken}")
           button(type="submit").btn.btn-primary Simpan
       div.col-xs-6.col-md-4

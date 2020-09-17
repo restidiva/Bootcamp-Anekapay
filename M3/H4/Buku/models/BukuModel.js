@@ -32,7 +32,11 @@
       harga: {
         type: 'Number',
         required: true
-    }
+      },
+      stok: {
+          type: 'Number',
+          required: true
+      }
     });
   
     module.exports = mongoose.model('Buku', buku);

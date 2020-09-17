@@ -40,7 +40,8 @@
       penerbit: req.body.penerbit,
       tahunTerbit: req.body.tahunTerbit,
       halaman: req.body.halaman,
-      harga: req.body.harga
+      harga: req.body.harga,
+      stok: req.body.stok
     });
 
     return buku.save(function(err, buku) {
@@ -93,6 +94,7 @@
       buku.tahunTerbit = req.body.tahunTerbit;
       buku.halaman = req.body.halaman;
       buku.harga = req.body.harga;
+      buku.stok = req.body.stok;
       buku.save();
 
       res.redirect('/');
